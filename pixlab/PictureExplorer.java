@@ -4,6 +4,8 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.awt.image.*;
 import javax.swing.border.*;
+import java.util.Scanner;
+
 /**
  * Displays a picture and lets you explore the picture by displaying the row, column, red,
  * green, and blue values of the pixel at the cursor when you click a mouse button or
@@ -800,7 +802,13 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
    */
   public static void main( String args[])
   {
-    Picture pix = new Picture("beach.jpg");
+    Scanner s = new Scanner(System.in);
+    System.out.println("Enter the file of the image you want to browse, or");
+    System.out.println("Press [enter] to load up the default \"beach.jpg\" file.");
+    String file_name = s.nextLine();
+    if (file_name.equals("")) file_name = "beach.jpg";
+    System.out.println("Loading \"" + file_name + "\"..."); 
+    Picture pix = new Picture(file_name);
     pix.explore();
   }
   
