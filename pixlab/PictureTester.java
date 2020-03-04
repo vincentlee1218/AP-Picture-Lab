@@ -8,6 +8,10 @@
  */
 public class PictureTester
 {
+    private static Picture b = new Picture("beach.jpg");
+    private static Picture gold = new Picture("goldenbay_babysonic_greetings.jpg");
+    private static Picture sonic = new Picture("icon_2020_sonic.png");
+    private static Picture[] pictures = {b, gold, sonic}; 
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
@@ -17,6 +21,15 @@ public class PictureTester
     beach.explore();
   }
   
+    /** Method to test keepOnlyBlue */
+    public static void testKeepOnlyBlue() {
+        for (Picture image : pictures) {
+            image.explore();
+            image.keepOnlyBlue();
+            image.explore();
+        }
+    }
+   
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -58,7 +71,13 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    // in BlueJ, you can also run the methods from
+    // the void methods below main(String[] args)
+    // simply click the method you want to run.
+    // This makes it easier to test certain methods
+    // without editing the main method as stated in
+    // the directions.
+    //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
